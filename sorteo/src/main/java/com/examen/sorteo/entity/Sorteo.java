@@ -1,7 +1,13 @@
 package com.examen.sorteo.entity;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +28,7 @@ public class Sorteo implements Serializable {
 	private int boletas;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="yyyy-mm-dd")
 	private Date fecha;
 
 	private int maximo;
@@ -60,7 +67,18 @@ public class Sorteo implements Serializable {
 	public Date getFecha() {
 		return this.fecha;
 	}
-
+	public void setFecha(String fecha) {
+	    Date date1;
+		try {
+			date1 = new SimpleDateFormat("dd-MM-yyyy").parse(fecha);
+			this.fecha=date1;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+	}
+	
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
@@ -132,5 +150,7 @@ public class Sorteo implements Serializable {
 
 		return persona;
 	}
+	
+	
 
 }

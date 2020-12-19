@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Crear un nuevo sorteo</title>
@@ -21,13 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="../sorteos">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sorteos">Sorteos</a>
+          <a class="nav-link" href="../sorteos">Sorteos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Crear Sorteo</a>
+          <a class="nav-link" href="crear">Crear Sorteo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -42,35 +44,35 @@
 
 
 <!-- Formulario -->
-<form action="create" method="POST" th:object="${sorteo}">
+<form action="create" method="POST" th:object="${sorteo} ">
   <div class="form-group row">
     <label for="nameSorteo" class="col-4 col-form-label">Nombre</label> 
     <div class="col-8">
-      <input id="nameSorteo" name="nameSorteo" placeholder="Nombre del sorteo" type="text" class="form-control" required="required">
+      <input id="nombre" name="nombre" placeholder="Nombre del sorteo" type="text" class="form-control" required="required">
     </div>
   </div>
   <div class="form-group row">
     <label for="dateSorteo" class="col-4 col-form-label">Fecha</label> 
     <div class="col-8">
-      <input id="dateSorteo" name="dateSorteo" placeholder="fecha del sorteo formato dd/mm/aaaa" type="text" class="form-control">
+      <input id="fecha" name="fecha"  placeholder="fecha del sorteo formato dd/mm/aaaa" type="date" class="form-control">
     </div>
   </div>
   <div class="form-group row">
     <label for="boletaSorteo" class="col-4 col-form-label">Boletas</label> 
     <div class="col-8">
-      <input id="boletaSorteo" name="boletaSorteo" placeholder="Cantidad de boletas sorteo" type="text" class="form-control" required="required">
+      <input id="boletas"  type="number" name="boletas" placeholder="Cantidad de boletas sorteo" class="form-control" required="required">
     </div>
   </div>
   <div class="form-group row">
     <label for="numBoleta" class="col-4 col-form-label">Numeros por boleta</label> 
     <div class="col-8">
-      <input id="numBoleta" name="numBoleta" type="text" class="form-control" required="required">
+      <input id="numeros" name="numeros" type="number"class="form-control" required="required">
     </div>
   </div>
   <div class="form-group row">
     <label for="maxBoleta" class="col-4 col-form-label">Maximo</label> 
     <div class="col-8">
-      <input id="maxBoleta" name="maxBoleta" type="text" class="form-control" required="required">
+      <input id="maximo" name="maximo" type="number" class="form-control" required="required">
     </div>
   </div> 
   <div class="form-group row">
