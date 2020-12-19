@@ -1,0 +1,3 @@
+Estoy trabajando MVC con el Spring Boot, en el frontend trabajo thymeleaf con html y css, el gestor de la base de datos es Mysql
+URL DEL PROYECTO:;
+https://github.com/yorgengalvis/examenfinal1151819.git
