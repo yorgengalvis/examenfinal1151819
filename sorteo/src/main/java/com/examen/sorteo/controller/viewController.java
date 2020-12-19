@@ -11,5 +11,9 @@ public class viewController {
 		return "index";
 	}
 	
+	@GetMapping("/sorteo/crear")
+	public String createSorteo() {
+		return "createSorteo";
+	}
 	
 }
